@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+<body>
+
+  <form id="form">
+    <input id="product" type="number" placeholder="Digite o preço do produto:">
+    <br>
+    <input id="percentage" type="number" placeholder="Digite o percentual de desconto:">
+    <br>
+    <button>Calcular</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let price = parseFloat(product.value)
+      let discount = parseFloat(percentage.value)
+
+      let discounted = price * discount / 100
+      let finalPrice = price - discounted
+
+      result.innerHTML = `
+        <ul>
+          <li>Preço base: <b>${price}</b>.</li>
+          <li>Valor do desconto: <b>${discounted}</b>.</li>
+          <li>Preço final: <b>${finalPrice}</b>.</li>
+        </ul>
+      `
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>

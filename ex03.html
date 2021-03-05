@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+<body>
+
+    <form id="form">
+        <input id="letA" type="number" placeholder="Informe o valor de A:">
+        <br>
+        <input id="letB" type="number" placeholder="Informe o valor de B:">
+        <br>
+        <input id="letC" type="number" placeholder="Informe o valor de C:">
+        <button>Calcular</button>
+      </form>
+    
+      <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let a = parseFloat(letA.value)
+      let b = parseFloat(letB.value)
+      let c = parseFloat(letC.value) 
+
+    let delta = b * b - 4 * a * c 
+    let x1 = (-b + Math.sqrt(delta)) / (2 * a) 
+    let x2 = (-b - Math.sqrt(delta)) / (2 * a) 
+
+    result.innerHTML = `
+      <ul>
+        <li>Entradas: <b>${a}</b>, <b>${b}</b> e <b>${c}</b>.</li>
+        <li>X1: <b>${x1}</b>.</li>
+        <li>X2: <b>${x2}</b>.</li>
+      </ul>
+    `
+    }
+
+    form.addEventListener('submit', onSubmit)
+    
+  </script>
+</body>
+</html>

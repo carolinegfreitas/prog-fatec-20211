@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    <form id="form">
+
+        <input id="n1" type="number" placeholder="Digite o primeiro numero: ">
+        <br>
+        <input id="n2" type="number" placeholder="Digite o segundo numero: ">
+        <br>
+        <button>Calcular</button>       
+        
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+         function onSubmit(event) {
+            event.preventDefault()
+
+        let num1 = parseFloat(n1.value)
+        let num2 = parseFloat(n2.value)
+
+        let sum = parseFloat(num1) + parseFloat(num2)
+        let subt = parseFloat(num1) - parseFloat(num2)
+        let multi = parseFloat(num1) * parseFloat(num2)
+        let divi = parseFloat(num1) / parseFloat(num2)
+
+        result.innerHTML = `
+        <ul>
+            <li>Soma: <b>${sum}</b>.</li>
+            <li>Subtração: <b>${subt}</b>.</li>
+            <li>Multiplicação: <b>${multi}</b>.</li>
+            <li>Divisão: <b>${divi}</b>.</li>     
+        </ul>
+      `
+    }
+
+    form.addEventListener('submit', onSubmit)
+
+    </script>
+
+
+</body>
+</html>
