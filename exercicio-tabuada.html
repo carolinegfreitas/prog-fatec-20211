@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Exercicio Tabuada</title>
+    
+</head>
+<body>
+    <p>- Crie outra página onde o usuário informará um número. Após validar se é número mesmo, exiba a tabuada deste número, ou seja, uma repetição multiplicando o número por todos os outros números de 0 a 10 e exibindo na tela.</p>
+
+    <form id="form">
+        <input id="field1" type="number" placeholder="Informe um numero">
+        <br>
+        <button>Exibir</button>
+        <br>
+    </form>
+    <div id="result"></div>
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let n1 = parseFloat(field1.value)
+
+             field1.className = ''
+
+      if (isNaN(n1)) {
+        result.innerHTML = '<p class="negative">Informe um número válido!</p>'
+        field1.className = 'negative'
+        field1.focus()
+        return
+      }
+
+      result.innerHTML = ''
+
+      for (let i = 1; i <= 10; i++) {
+        let mult = n1 * i
+        result.innerHTML += `${n1} x ${i} = ${mult} <br/>`
+          }
+          
+          }
+      form.addEventListener('submit', onSubmit)
+    </script>
+</body>
+</html>
